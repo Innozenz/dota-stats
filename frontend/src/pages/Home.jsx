@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import SearchBar from "../partials/SearchBar";
-import axios from "axios";
 import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
