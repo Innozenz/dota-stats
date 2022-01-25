@@ -64,10 +64,6 @@ const Player = () => {
         });
     }, [isLoading]);
 
-
-    console.log(peers)
-    console.log(playerMatch)
-
     dayjs.locale("fr");
 
     if (isLoading) {
