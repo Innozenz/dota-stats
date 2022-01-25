@@ -127,7 +127,7 @@ const Player = () => {
                                         <tr key={match.match_id}>
                                             <td className="px-3 py-1 whitespace-nowrap">
                                                 {heroesStat.filter(heros => heros.id === match.hero_id).map(filteredName => (
-                                                    <div className="flex items-center">
+                                                    <div key={match.match_id} className="flex items-center">
                                                         <div className="flex-shrink-0 h-8 w-18">
                                                             <img className="w-full h-full rounded"
                                                                  src={`https://api.opendota.com${filteredName.img}`}
@@ -171,8 +171,7 @@ const Player = () => {
                       </span>
                                                 )}
                                             </td>
-                                            <td className="flex flex-col px-6 py-2 whitespace-nowrap"
-                                                key={win.match_id}>
+                                            <td className="flex flex-col px-6 py-2 whitespace-nowrap">
                                                 {match.lobby_type === 0 ? (
                                                     <span
                                                         className="px-2 inline-flex text-xs leading-5 font-semibold rounded">
@@ -255,10 +254,10 @@ const Player = () => {
                                         </thead>
                                         <tbody className="bg-white divide-y divide-gray-200">
                                         {topTen.slice(0, 10).map((list) => (
-                                            <tr key={list.id}>
+                                            <tr key={list.hero_id}>
                                                 <td className="px-3 whitespace-nowrap">
                                                     {heroesStat.filter(heroes => heroes.id == list.hero_id).map(filteredHero => (
-                                                        <div className="flex items-center">
+                                                        <div key={list.hero_id} className="flex items-center">
                                                             <div className="flex-shrink-0 h-8 w-18">
                                                                 <img className="w-full h-full rounded"
                                                                      src={`https://api.opendota.com${filteredHero.img}`}
@@ -327,7 +326,7 @@ const Player = () => {
                                         </thead>
                                         <tbody className="bg-white divide-y divide-gray-200">
                                         {peers.slice(0, 5).map((peer) => (
-                                            <tr
+                                            <tr key={peers.account_id}
                                                 onClick={() => pushToPlayer(peer.account_id)}
                                                 className="cursor-pointer">
                                                 <td
