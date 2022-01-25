@@ -53,7 +53,7 @@ const Search = () => {
         <div className="p-36 grid grid-cols-4 gap-x-0.5 gap-y-12 w-full h-screen flex-auto">
             {listOfPlayers.map((list) => (
                 <div key={list.account_id} onClick={() => pushToProfile(list.account_id)}
-                    className="flex flex-col justify-center max-w-xs p-6 shadow-md rounded-xl sm:px-12 dark:bg-coolGray-900 dark:text-coolGray-100">
+                    className="flex flex-col justify-center max-w-xs p-6 shadow-md rounded-xl sm:px-12 dark:bg-coolGray-900 dark:text-coolGray-100 cursor-pointer">
                     <img src={`${list.avatarfull}`} alt=""
                          className="w-16 h-16 mx-auto rounded-full dark:bg-coolGray-500"/>
                     <div
